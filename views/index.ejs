@@ -1,0 +1,36 @@
+<%- include('partials/header') %>
+    <main>
+        <form action="/joke" method="GET">
+            <label for="name">Your Name (optional):</label>
+            <input type="text" id="name" name="name">
+            
+            <label for="category">Joke Category:</label>
+            <!-- // Update your category select in index.ejs -->
+<select id="category" name="category">
+  <option value="Any">Any 😊</option>
+  <option value="Programming">Programming 💻</option>
+  <option value="Misc">Miscellaneous 🌈</option>
+  <option value="Dark">Dark 🌑</option>
+  <option value="Pun">Pun 😏</option>
+  <option value="Spooky">Spooky 👻</option>
+  <option value="Christmas">Christmas 🎄</option>
+</select>
+            
+            <button type="submit" id="submit-btn">
+              <span id="btn-text">Get Joke</span>
+              <span id="btn-spinner" class="loading" style="display: none;"></span>
+            </button>
+<script>
+  document.querySelector('form').addEventListener('submit', function() {
+    const btn = document.getElementById('submit-btn');
+    const btnText = document.getElementById('btn-text');
+    const spinner = document.getElementById('btn-spinner');
+    
+    btn.disabled = true;
+    btnText.textContent = 'Loading...';
+    spinner.style.display = 'inline-block';
+  });
+</script>         
+        </form>
+    </main>
+<%- include('partials/footer') %>

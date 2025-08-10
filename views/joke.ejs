@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+    <main>
+        <% if (typeof error !== 'undefined' && error) { %>
+            <div class="error">
+                <p><%= error %></p>
+            </div>
+        <% } %>
+        
+        <% if (typeof joke !== 'undefined' && joke) { %>
+            <div class="joke-container">
+                <% if (joke.type === 'single') { %>
+                    <p class="joke-text"><%= joke.joke %></p>
+                <% } else { %>
+                    <p class="joke-setup"><%= joke.setup %></p>
+                    <% if (joke.delivery) { %>
+                        <p class="joke-delivery"><%= joke.delivery %></p>
+                    <% } %>
+                <% } %>
+                <p class="joke-info">Category: <%= joke.category %></p>
+            </div>
+        <% } %>
+        
+        <a href="/" class="floating-btn" title="Get Another Joke">
+  <span style="font-size: 1.8rem;">😂</span>
+</a>
+    </main>
+<%- include('partials/footer') %>
