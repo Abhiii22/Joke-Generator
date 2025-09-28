@@ -22,3 +22,4 @@ A simple web application that fetches jokes from JokeAPI based on user preferenc
 
 ## API Used
 This project uses the [JokeAPI](https://sv443.net/jokeapi/v2/).
+ 
